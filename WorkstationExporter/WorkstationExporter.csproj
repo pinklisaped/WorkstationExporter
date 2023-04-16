@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-ResourceState-39d92615-cdff-497d-81db-808fedffa8d1</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\HTTP" />
+    <None Remove="Resources\Pings" />
+    <None Remove="Resources\Processes" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Processes" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Prometheus.Client" Version="5.2.0" />
+    <PackageReference Include="Prometheus.Client.MetricServer" Version="5.0.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\HTTP" />
+    <EmbeddedResource Include="Resources\Pings" />
+  </ItemGroup>
+</Project>
